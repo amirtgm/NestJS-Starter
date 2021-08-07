@@ -1,4 +1,48 @@
 {
   "collection": "@nestjs/schematics",
-  "sourceRoot": "src"
+  "sourceRoot": "apps/NestJS-Starter/src",
+  "monorepo": true,
+  "root": "apps/NestJS-Starter",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/NestJS-Starter/tsconfig.app.json"
+  },
+  "projects": {
+    "NestJS-Starter": {
+      "type": "application",
+      "root": "apps/NestJS-Starter",
+      "entryFile": "main",
+      "sourceRoot": "apps/NestJS-Starter/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/NestJS-Starter/tsconfig.app.json"
+      }
+    },
+    "gateway": {
+      "type": "application",
+      "root": "apps/gateway",
+      "entryFile": "main",
+      "sourceRoot": "apps/gateway/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/gateway/tsconfig.app.json"
+      }
+    },
+    "communication": {
+      "type": "application",
+      "root": "apps/communication",
+      "entryFile": "main",
+      "sourceRoot": "apps/communication/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/communication/tsconfig.app.json"
+      }
+    },
+    "core": {
+      "type": "application",
+      "root": "apps/core",
+      "entryFile": "main",
+      "sourceRoot": "apps/core/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/core/tsconfig.app.json"
+      }
+    }
+  }
 }
